@@ -1,4 +1,6 @@
 #!/usr/bin/gosh
+;; -*- coding:utf-8 -*-
+;;実行方法　gosh ex01-07.scm
 
 (define (square x) (* x x)) 
 
@@ -20,10 +22,28 @@
   (/ (+ x y) 2)) 
 
 (define (good-enough? guess x)
-  (< (abs (/ (- (square guess) x) (* 2 x))) 0.001))
+  (< (abs (- (square guess) x)) 0.001))
 
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
+(print "(sqrt 0.00000004)")
 (print (sqrt 0.00000004))
-(print (sqrt 4000000000000000000000000))
+(print )
+
+(print "(sqrt 4000000000000000000000000000000000000)")
+(print (sqrt 4000000000000000000000000000000000000))
+(print )
+
+(print "上のままだとうまく行かないのでgood-enough?を書き換えるとうまくいく")
+(define (good-enough? guess x)
+  (< (abs (/ (- (square guess) x) (* 2 x))) 0.001))
+
+
+(print "(sqrt 0.00000004)")
+(print (sqrt 0.00000004))
+(print )
+
+(print "(sqrt 4000000000000000000000000000000000000)")
+(print (sqrt 4000000000000000000000000000000000000))
+(print )
