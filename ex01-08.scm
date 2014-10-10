@@ -1,4 +1,6 @@
-#!usr/bin/gosh
+#!/usr/bin/gosh
+;; -*- coding:utf-8 -*-
+;;実行方法　gosh ex-08.scm
 
 (define (cub x) (* x x x)) 
 (define (square x) (* x x)) 
@@ -26,5 +28,10 @@
 (define (cube x)
   (cube-iter 1.0 x))
 
+(print "(cube 27)")
 (print (cube 27))
+(print )
+
+(print "(cube 64)")
 (print (cube 64))
+(print )
